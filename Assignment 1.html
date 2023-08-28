@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Assignment 1</title>
+	<style >
+	#thumbnail-section{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#photo-section-up{width:1200px;
+		display: flex;}
+
+		#photo-section-down{width:1200px;
+		display: flex;}
+    .allphoto{width: 400px;height:300px; }
+    	.mainphoto{width:1200px;
+		display: flex;}
+		h1{text-align: center;}
+	</style>
+</head>
+<body>
+<h1>A350-1000 Photo Gallery</h1>
+<div id="thumbnail-section">
+<div id="photo-section-up">
+	<div id="photo1">
+		<img class="allphoto" src="img/A350-1.jpeg" alt="A350-1" id="photo-1" >
+	</div>
+	<div id="photo2">
+		<img class="allphoto" src="img/A350-2.jpeg" alt="A350-2" id="photo-2">
+	</div>
+	<div id="photo3">
+		<img class="allphoto" src="img/A350-3.webp" alt="A350-3" id="photo-3" >
+	</div>
+	</div>
+ <div id="photo-section-down">
+	<div id="photo4">
+		<img class="allphoto" src="img/A350-4.jpeg" alt="A350-4" id="photo-4">
+	</div>
+	<div id="photo5">
+		<img class="allphoto" src="img/A350-5.jpeg" alt="A350-5" id="photo-5">
+	</div>
+	<div id="photo6">
+		<img class="allphoto" src="img/A350-6.jpeg" alt="A350-6" id="photo-6">
+	</div>
+	</div>
+	<div id= mainimage>
+		<img class="mainphoto" src="img/A350-1.jpeg" alt="A350-main" >
+	</div>
+	</div>
+	<script>
+
+		document.querySelector('#photo-4').onclick=function(){
+			document.querySelector(".mainphoto").src ="img/A350-4.jpeg";
+			document.querySelector(".mainphoto").alt = "A350-4";
+		}
+
+		document.querySelector('#photo-2').onclick=function(){
+			document.querySelector(".mainphoto").src ="img/A350-2.jpeg";
+			document.querySelector(".mainphoto").alt = "A350-2";
+
+		}
+
+		document.querySelector('#photo-1').onclick=function(){
+			document.querySelector(".mainphoto").src ="img/A350-1.jpeg";
+			document.querySelector(".mainphoto").alt = "A350-1";
+		}
+
+		document.querySelector('#photo-3').onclick=function(){
+			document.querySelector(".mainphoto").src ="img/A350-3.webp";
+			document.querySelector(".mainphoto").alt = "A350-3";
+		}
+
+		document.querySelector('#photo-5').onclick=function(){
+			document.querySelector(".mainphoto").src ="img/A350-5.jpeg";
+			document.querySelector(".mainphoto").alt = "A350-5";
+		}
+		document.querySelector('#photo-6').onclick=function(){
+			document.querySelector(".mainphoto").src ="img/A350-6.jpeg";
+			document.querySelector(".mainphoto").alt = "A350-6";
+		}
+
+		
+	</script>
+	
+
+	
+
+</body>
+</html>
