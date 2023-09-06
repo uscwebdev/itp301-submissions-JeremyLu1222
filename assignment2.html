@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Assignment 2</title>
+	<style>
+		h1{color: white;
+		text-align: center;	
+		margin: 0px;
+
+		
+		}
+		
+		body{margin: auto;}
+		
+		#header{
+            height: 100px;
+            background-color: turquoise;
+            font-size: 2em;
+            text-align: center;
+            width: 1500px;
+            margin-top: 0px;
+			}
+		.itempic{width:auto;
+			height:280px;
+			padding-right: 20px}
+		#allitem{display: flex;
+			width: 1500px;
+			}
+
+	   
+		#subtotal{text-align: right;padding-right: 20px;}
+		.footer{width:1500px;
+			height: 30px;
+			background-color: turquoise;
+			margin-top: 0px;
+			text-align: center;
+			position: fixed;
+			bottom: 0px;
+
+			}
+		
+		
+		
+	</style>
+	
+</head>
+<body>
+<!-- crate a header -->
+
+	<div id="header">
+		<h1>Basketball Shoes Store</h1>
+	</div>
+<!-- create item section -->
+<div id="mainbody">
+<div id= allitem>
+<div id="item1">
+	<img class=itempic src="img/kd.jpeg" alt="item1" id="kdpic">
+	<center><p class="item1-price">Price: $<span id="price1">50</span></p></center>
+	
+
+</div>
+<div id=“item2”>
+	<img class=itempic src="img/gtcut1.jpeg" alt="item2" id="gt">
+	<center><p class="item2-price">Price: $<span id="price2">110</span></p></center>
+</div>
+<div id="item3">
+	<img class=itempic src="img/kobe6.jpeg" alt="item3 " id="kb">
+	<center><p class="item1-price">Price: $<span id="price3">120</span></p></center>
+</div>
+</div>
+<!-- Create Subtotal -->
+<div id=subtotal>
+	<p class="subtotal">Cart Subtotal: $<span id="subtotalprice">0</span></p>
+	
+</div>
+</div>
+
+<!-- create footer -->
+<div class="footer">
+	Jeremy Lu | Assignment 2
+</div>
+<!-- Workflow of java script -->
+
+<script>
+	// global variable
+	var subtotal=parseInt(0);
+    // make picture a clickable button
+	document.querySelector('#kdpic').onclick=function(){
+		var kdprice=document.querySelector('#price1').innerHTML;
+		// add price whenever click the pic
+		kdprice=parseInt(kdprice);
+		subtotal+=kdprice;
+		document.querySelector('#subtotalprice').innerHTML=subtotal;
+	}
+
+	document.querySelector('#gt').onclick=function(){
+		var gtprice=document.querySelector('#price2').innerHTML;
+		gtprice=parseInt(gtprice);
+		subtotal+=gtprice;
+		document.querySelector('#subtotalprice').innerHTML=subtotal;
+	}
+	document.querySelector('#kb').onclick=function(){
+		var kbprice=document.querySelector('#price3').innerHTML;
+		kbprice=parseInt(kbprice);
+		subtotal+=kbprice;
+		document.querySelector('#subtotalprice').innerHTML=subtotal;
+	}
+
+
+			
+
+</script>
+</body>
+
+
+	
+
+
+</html>
