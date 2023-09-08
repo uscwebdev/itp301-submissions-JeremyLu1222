@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab 3</title>
+	<style>
+		h1{color: white;
+		text-align: center;	
+		margin: 0px;
+
+		
+		}
+		
+		body{margin: auto;}
+		
+		#header{
+            height: 100px;
+            background-color: turquoise;
+            font-size: 2em;
+            text-align: center;
+            width: 1500px;
+            margin-top: 0px;
+			}
+		.itempic{width:auto;
+			height:280px;
+			padding-right: 20px}
+		#allitem{display: flex;
+			width: 1500px;
+			margin-left: auto;
+			margin-right: auto;
+			}
+
+	   #subtotal{display:flex;}
+	   #sub{text-align: center;
+	   	width:50%;}
+	   #rem{width: 50%;
+	   	text-align: center;}
+		
+
+		.footer{width:1500px;
+			height: 30px;
+			background-color: turquoise;
+			margin-top: 0px;
+			text-align: center;
+			position: fixed;
+			bottom: 0px;
+
+
+
+			}
+		#add{padding-left:270px;}
+		#dollar{background-color: lightgray;}
+		
+
+		
+		
+	</style>
+	
+</head>
+<body>
+<!-- crate a header -->
+
+	<div id="header">
+		<h1>Basketball Shoes Store</h1>
+	</div>
+<!-- create item section -->
+<div id="mainbody">
+<div id= allitem>
+<div id="item1">
+	<img class=itempic src="img/kd.jpeg" alt="item1" id="kdpic">
+	<center><p class="item1-price">Price: $<span id="price1">50</span></p></center>
+	
+
+</div>
+<div id=“item2”>
+	<img class=itempic src="img/gtcut1.jpeg" alt="item2" id="gt">
+	<center><p class="item2-price">Price: $<span id="price2">110</span></p></center>
+</div>
+<div id="item3">
+	<img class=itempic src="img/kobe6.jpeg" alt="item3 " id="kb">
+	<center><p class="item1-price">Price: $<span id="price3">120</span></p></center>
+</div>
+</div>
+<!-- Create Subtotal -->
+<div id=subtotal>
+	<div id="rem"><p class="remain">Remaining funds: $<span id="remainamount">0</span></p></div>
+	<div id="sub"><p class="subtotal">Cart Subtotal: $<span id="subtotalprice">0</span></p></div>
+	
+	
+</div>
+<!-- Add funds section -->
+<div>
+	<div id="add"><span id="dollar">&#36;</span><input type="number" id="int-input" class="inputprice"><span><button id="moola">Add Moola</button></span></div>
+
+	
+</div>
+</div>
+
+<!-- create footer -->
+<div class="footer">
+	Jeremy Lu | Lab 3
+</div>
+<!-- Workflow of java script -->
+
+<script>
+	// global variable
+	var subtotal=parseInt(0);
+	var initial=parseInt(0);
+	var now;
+	document.querySelector('#moola').onclick=function(){
+		var moola=document.querySelector('#int-input').value;
+		moola=parseInt(moola);
+		initial+=moola;
+		document.querySelector('#int-input').value = '';
+		document.querySelector('#remainamount').innerHTML=initial;
+	}
+    // make picture a clickable button
+	document.querySelector('#kdpic').onclick=function(){
+		var kdprice=document.querySelector('#price1').innerHTML;
+		// add price whenever click the pic
+		kdprice=parseInt(kdprice);
+		
+		
+		
+		if (kdprice<=initial) {
+		subtotal+=kdprice;
+		initial=initial-kdprice;
+		document.querySelector('#subtotalprice').innerHTML=subtotal;
+		document.querySelector('#remainamount').innerHTML=initial;
+	    }
+		else{alert('insufficient funds');
+	    }
+		
+	}
+
+	document.querySelector('#gt').onclick=function(){
+		var gtprice=document.querySelector('#price2').innerHTML;
+		gtprice=parseInt(gtprice);
+		if (gtprice<=initial) {
+		subtotal+=gtprice;
+		initial=initial-gtprice;
+		document.querySelector('#subtotalprice').innerHTML=subtotal;
+		document.querySelector('#remainamount').innerHTML=initial;
+	    }
+		else{alert('insufficient funds');
+	    }
+	}
+	document.querySelector('#kb').onclick=function(){
+		var kbprice=document.querySelector('#price3').innerHTML;
+		kbprice=parseInt(kbprice);
+		if (kbprice<=initial) {
+		initial=initial-kbprice;
+		document.querySelector('#subtotalprice').innerHTML=subtotal;
+		document.querySelector('#remainamount').innerHTML=initial;
+	    }
+		else{alert('insufficient funds');
+	    }
+	}
+	
+	
+
+			
+
+</script>
+</body>
+
+
+	
+
+
+</html>
