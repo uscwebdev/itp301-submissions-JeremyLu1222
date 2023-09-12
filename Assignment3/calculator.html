@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<style>
+		#display {
+			font-size: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1 class="col-12 text-center mt-5">JS Calculator</h1>
+		</div> <!-- .row -->
+		<div class="row">
+			<div id="calculator" class="mt-4 col-12 col-md-6 ml-md-auto mr-md-auto col-lg-4">
+				<div class="row">
+					<input type="text" id="display" class="col-12 text-right form-control" value="0">
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-9 btn btn-lg btn-outline-dark" id="ac">AC</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id=operation4>/</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number7">7</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number8">8</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number9">9</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="operation1">x</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number4">4</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number5">5</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number6">6</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="operation2">-</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number1">1</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number2">2</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="number3">3</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id="operation3">+</button>
+				</div> <!-- .row -->
+				<div class="row">
+					<button class="col-6 btn btn-lg btn-outline-dark" id="number0">0</button>
+					<button class="col-3 btn btn-lg btn-outline-dark">.</button>
+					<button class="col-3 btn btn-lg btn-outline-dark" id=operation5>=</button>
+				</div> <!-- .row -->
+			</div> <!-- #calculator -->
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</body>
+<script>
+var operation;
+var display="";
+var num1=" ";
+var num2=" "
+
+//initial diplay of numbers
+document.querySelector("#number1").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number1").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+
+
+document.querySelector("#number2").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number2").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+
+  document.querySelector("#number3").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number3").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+  document.querySelector("#number4").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number4").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+  document.querySelector("#number5").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number5").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+  document.querySelector("#number6").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number6").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+  document.querySelector("#number9").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number9").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+  document.querySelector("#number7").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number7").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+  document.querySelector("#number8").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number8").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+  document.querySelector("#number0").onclick = function(){
+   display = document.querySelector("#display").value;
+   var tt=document.querySelector("#number0").innerHTML;
+      display+=tt;
+      display=parseInt(display);
+
+   document.querySelector("#display").value = display;
+   console.log(display);
+  }
+
+
+document.querySelector('#ac').onclick=function(){
+operation=" ";
+num2=" ";
+num1=" ";
+document.querySelector("#display").value="0";
+}
+
+// when users click +
+document.querySelector('#operation3').onclick=function(){
+	operation="+";
+	num1=parseInt(display);
+	console.log(num1);
+	document.querySelector('#display').value="0";
+	console.log(document.querySelector('#display').value);
+
+
+}
+
+// when users click -
+document.querySelector('#operation2').onclick=function(){
+	operation="-";
+	num1=parseInt(display);
+	console.log(num1);
+	document.querySelector('#display').value="0";
+	console.log(document.querySelector('#display').value);}
+
+
+// when users click /
+	document.querySelector('#operation4').onclick=function(){
+	operation="/";
+	num1=parseInt(display);
+	console.log(num1);
+	document.querySelector('#display').value="0";
+	console.log(document.querySelector('#display').value);}
+
+
+//When users click *
+	document.querySelector('#operation1').onclick=function(){
+	operation="*";
+	num1=parseInt(display);
+	console.log(num1);
+	document.querySelector('#display').value="0";
+	console.log(document.querySelector('#display').value);}
+
+
+// When users click =
+document.querySelector('#operation5').onclick=function(){
+	num2=parseInt(display);
+	console.log(num2);
+
+	if(operation=="+"){
+		document.querySelector('#display').value=num1+num2;
+	}
+	else if (operation=="*") {
+		document.querySelector('#display').value=num1*num2;
+
+	}
+    else if (operation=="-") {
+		document.querySelector('#display').value=num1-num2;
+
+    }
+    else if (operation=="/") {
+		document.querySelector('#display').value=num1/num2;
+
+    }
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</html>
