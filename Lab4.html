@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab 4</title>
+	<style >
+	#thumbnail-section{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#photo-section-up{width:1200px;
+		display: flex;}
+
+		#photo-section-down{width:1200px;
+		display: flex;}
+    .allphoto{width: 400px;height:300px; }
+    	.mainphoto{width:1200px;
+		display: flex;}
+		h1{text-align: center;}
+	</style>
+</head>
+<body>
+<h1>A350-1000 Photo Gallery</h1>
+<div id="thumbnail-section">
+<div id="photo-section-up">
+	<div id="photo">
+		<img class="allphoto" src="img/A350-1.jpeg" alt="A350-1000 Original Livery" id="photo-1" >
+	</div>
+	<div id="photo">
+		<img class="allphoto" src="img/A350-2.jpeg" alt="A350-1000 Lufthansa" id="photo-2">
+	</div>
+	<div id="photo">
+		<img class="allphoto" src="img/A350-3.webp" alt="A350-1000 Qantas" id="photo-3" >
+	</div>
+	</div>
+ <div id="photo-section-down">
+	<div id="photo">
+		<img class="allphoto" src="img/A350-4.jpeg" alt="A350-1000 Philippines" id="photo-4">
+	</div>
+	<div id="photo">
+		<img class="allphoto" src="img/A350-5.jpeg" alt="A350-1000 Virgin Atlantic" id="photo-5">
+	</div>
+	<div id="photo">
+		<img class="allphoto" src="img/A350-6.jpeg" alt="A350-1000 Etihad" id="photo-6">
+	</div>
+	</div>
+	<div id= mainimage>
+		<img class="mainphoto" src="img/A350-1.jpeg" alt="A350-1000 Original Livery" >
+		<center><p id="caption">A350-1000 Original Livery</p></center></div>
+	</div>
+	</div>
+	<script>
+
+		// document.querySelector('#photo-4').onclick=function(){
+		// 	document.querySelector(".mainphoto").src ="img/A350-4.jpeg";
+		// 	document.querySelector(".mainphoto").alt = "A350-4";
+		// }
+
+		// document.querySelector('#photo-2').onclick=function(){
+		// 	document.querySelector(".mainphoto").src ="img/A350-2.jpeg";
+		// 	document.querySelector(".mainphoto").alt = "A350-2";
+
+		// }
+
+		// document.querySelector('#photo-1').onclick=function(){
+		// 	document.querySelector(".mainphoto").src ="img/A350-1.jpeg";
+		// 	document.querySelector(".mainphoto").alt = "A350-1";
+		// }
+
+		// document.querySelector('#photo-3').onclick=function(){
+		// 	document.querySelector(".mainphoto").src ="img/A350-3.webp";
+		// 	document.querySelector(".mainphoto").alt = "A350-3";
+		// }
+
+		// document.querySelector('#photo-5').onclick=function(){
+		// 	document.querySelector(".mainphoto").src ="img/A350-5.jpeg";
+		// 	document.querySelector(".mainphoto").alt = "A350-5";
+		// }
+		// document.querySelector('#photo-6').onclick=function(){
+		// 	document.querySelector(".mainphoto").src ="img/A350-6.jpeg";
+		// 	document.querySelector(".mainphoto").alt = "A350-6";
+		// }
+  
+  var photogallery=document.querySelectorAll(".allphoto");
+  function changeMainImg (newSrc, newAlt){
+			document.querySelector(".mainphoto").src = newSrc;
+			document.querySelector(".mainphoto").alt = newAlt;}
+
+
+
+  console.log(photogallery[1]);
+
+		for (var i = 0; i < photogallery.length; i++){
+			photogallery[i].onclick=function(){
+			changeMainImg(this.src,this.alt);
+			document.querySelector('#caption').innerHTML=this.alt;
+			}
+
+		}
+
+
+
+ 
+	</script>
+	
+
+	
+
+</body>
+</html>
