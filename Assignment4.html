@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Assignment 4</title>
+	<style>
+	#dice{display: flex;}
+		.dicepic{width: 60px;
+			padding-left: 10px;
+			padding-right: 10px;}
+	</style>
+</head>
+	
+<body>
+<h1>Liar's Dice</h1>
+<span>Your Guess: </span><input id="guess" class="userguess">
+<span id="submit"><button>Submit</button></span>
+<p><b>Results:<span id="result"></span></b></p>
+
+<div id="dice">
+	<img class="dicepic" src="1.png" alt="dicepicture">
+	<img class="dicepic" src="1.png" alt="dicepicture">
+	<img class="dicepic" src="1.png" alt="dicepicture">
+	<img class="dicepic" src="1.png" alt="dicepicture">
+	<img class="dicepic" src="1.png" alt="dicepicture">
+	</div>
+
+	<script >
+	var dicepicarray=document.querySelectorAll('.dicepic');
+	console.log(dicepicarray);
+	
+	var numberarray=[];
+	for (var i = 0; i <5 ; i++) {
+		var number=Math.floor( Math.random() * 6 + 1 );
+		numberarray.push(number);
+	};
+	console.log(numberarray);
+	var testnumber=function(value){
+		value=parseInt(value);
+		if (numberarray.includes(value)){
+			document.querySelector('#result').innerHTML="You guessed it!";
+			document.querySelector('#result').setAttribute("style","color:green");
+		}
+		else{document.querySelector('#result').innerHTML="So Close,but not right!";
+			document.querySelector('#result').setAttribute("style","color:red");}
+		}
+
+		
+		
+
+		
+	
+
+	document.querySelector('#submit').onclick=function(){
+		var guessvalue=document.querySelector("#guess").value;
+		testnumber(guessvalue);
+			
+			for (var i = 0; i <dicepicarray.length; i++) {
+			dicepicarray[i].src=numberarray[i]+".png";
+
+			}
+
+		
+
+	}
+	
+
+
+	
+</script>
+
+</body>
+
+
+
+</html>
